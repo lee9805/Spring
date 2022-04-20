@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 40px;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            background-color: pink;
+            color: black;
+            line-height: 100px;
+        }
+        header {
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav ul {
+            width: 100%;
+            display: inline-block;
+            list-style: none;
+            background-color: rgb(255, 255, 167);
+            color: black;
+        }
+        nav li {
+            float: left;
+            padding-bottom: 10px;
+            margin: 10px 30px;
+
+        }
+        nav ul li:last-child {
+            float: right;
+            margin-right: 70px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            text-align: center;
+            margin: 0 auto;
+        }
+        table thead tr {
+            background-color: #ccc;
+            border-top: 2px solid #eee;
+        }
+        td,
+        th {
+            padding: 15px ;
+        }
+        tbody tr {
+            border-top: 1px solid #eee;
+        }
+        tbody tr:last-child {
+            border-bottom: 1px solid #eee;
+        }
+        tbody td:nth-child(2) {
+            text-align: left;
+            font-weight: bold;
+        }
+        input {
+            margin-right: 65px;
+            text-align-last: right;
+            float: right;
+            background-color: pink;
+            direction: inherit;
+            font-size: 18px;
+            border: 0;
+            border-radius: 5px;
+            padding: 0.25em 0.25em 0.25em 0.25em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>행복하고 신나는 하루</h1>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>공지사항</li>
+                <li>학생정보</li>
+                <li>로그인</li>
+            </ul>
+        </nav>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+                <th>성별</th>
+                <th>취미</th>
+                <th>주소</th>
+                <th>전화번호</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>이몽룡</td>
+                <td>25</td>
+                <td>남자</td>
+                <td>순간이동</td>
+                <td>조선시대 한경</td>
+                <td>010-1234-1234</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>강하늘</td>
+                <td>25</td>
+                <td>남자</td>
+                <td>영화보기</td>
+                <td>서울 강남</td>
+                <td>010-1234-1234</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type='button' value="추가하기">
+    </section>
+
+</body>
+
+</html>
