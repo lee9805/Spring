@@ -1,0 +1,54 @@
+@charset "UTF-8";
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+	header {
+		padding: 2rem;
+		background-color: rgb(52,152,219);
+		color: white;
+		/* text-shadow: 1px 1px 1px black; */
+		text-align: center;
+	}
+	nav {
+		background-color: rgb(175, 209, 171);
+		color: white;
+	}
+	nav ul {
+		display: flex;
+		list-style: none;
+	}
+	nav a {
+		display: inline-block;
+		padding: 12px 16px;
+		text-decoration: none;
+		/* a tag를 감싸고 있는 누군가의 color를 상속*/
+		color: inherit;
+	}
+	nav a:hover {
+		color :black;
+		background-color: #eee;
+	}
+	section {
+		flex: 1;
+		width: 90%;
+		border: 1px solid blue;
+		margin: 0 auto;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	footer {
+		background-color: rgb(190, 190, 190);
+		color: black;
+		text-align: center;
+		padding: 0.8rem;
+	}
