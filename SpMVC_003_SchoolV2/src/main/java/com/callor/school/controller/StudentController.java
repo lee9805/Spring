@@ -14,7 +14,7 @@ import com.callor.school.service.StudentService;
  * localhost:8080/school/student/list : StudentController#list() 의 mappint 이 연결
  * 
  */
-@RequestMapping(value = "/student")
+@RequestMapping(value ="/student")
 @Controller
 public class StudentController {
 	
