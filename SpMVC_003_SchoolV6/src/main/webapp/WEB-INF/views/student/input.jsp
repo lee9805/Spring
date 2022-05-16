@@ -40,11 +40,8 @@
 		flex:1;
 	}
 </style>
-<script>
-	const rootPath ="${rootPath}"
-</script>
-<script src="${rootPath}/static/js/std_input_save.js?ver=2022-05-13-001"></script>
-<script src="${rootPath}/static/js/std_input.js?ver=2022-05-13-011"></script>
+<script src="${rootPath}/static/js/std_input_save.js?ver=2022-05-16-007"></script>
+<script src="${rootPath}/static/js/std_input.js?ver=2022-05-16-007"></script>
 <h1>학생정보 등록</h1>
 <form method="POST">
 	<div>

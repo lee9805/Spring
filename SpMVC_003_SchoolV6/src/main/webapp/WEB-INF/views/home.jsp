@@ -104,6 +104,10 @@
 		color: white;
 		background-color: red;
 	}
+	article.st-list {
+		overflow: auto;
+		max-height: 74.5vh;
+	}
 	
 </style>
 <script>
@@ -141,7 +145,9 @@
 				</article>
 			</c:when>
 			<c:otherwise>
-				<article></article>
+				<article class="st-list">
+					<%@ include file="/WEB-INF/views/student/list.jsp" %>
+				</article>
 				<article></article>
 				<article></article>
 			</c:otherwise>
