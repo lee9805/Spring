@@ -17,7 +17,7 @@ public class UserServiceImplV1 implements UserService {
 		String username = userVO.getUsername();
 		String password = userVO.getPassword();
 		
-		if(userVO.getUsername().equalsIgnoreCase("lee9805")
+		if(username.equalsIgnoreCase("lee.98")
 					&& password.equals("12341234")) {
 			userVO.setName("이소정");
 			userVO.setRole("ADMIN");
