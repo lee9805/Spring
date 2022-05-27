@@ -33,6 +33,49 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		<!-- DBMS 연동 프로젝트 -->
+		<!-- spring-jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- spring 프로제트에서 DBMS와 연견하는 첫번째 파이프 -->
+
+		<!-- common-dbcp2 -->
+		<!-- db connection pool을 만들고 db 연결을 원할 도와주는 도구 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+
+
+		<!-- mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.5.10</version>
+		</dependency>
+
+		<!-- mybatis-spring -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>2.0.7</version>
+		</dependency>
+
+		<!-- DB 와 연결할때 sql을 변환하여 db로 보내는 데이터로 자동 변환 -->
+		<!-- dao 클래스를 자동으로 생성해주는 도구 -->
+
+		<!-- odbjc -->
+		<!-- oracle 과연결할때 project에서 dbms 로 연결하는 도구 -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>18.15.0.0</version>
+		</dependency>
 
 		<!-- AspectJ -->
 		<dependency>

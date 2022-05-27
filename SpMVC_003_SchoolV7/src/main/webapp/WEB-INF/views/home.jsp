@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="icon" href="${rootPath}/static/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<h1>hello java</h1>
