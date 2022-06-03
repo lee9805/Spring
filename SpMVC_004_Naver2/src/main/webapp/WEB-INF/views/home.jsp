@@ -36,8 +36,9 @@
 		<ul>
 			<li><a href="${rootPath}/">home</a></li>
 			<li><a href="${rootPath}/books/list">도서정보</a></li>
-			<li><a href="${rootPath}/news">오늘의 뉴스</a></li>
-			<li><a href="${rootPath}/movies">영화정보</a></li>
+			<li><a href="${rootPath}/news/list">오늘의 뉴스</a></li>
+			<li><a href="${rootPath}/movies/list">영화정보</a></li>
+			<li><a href="${rootPath}/naver">네이버 체험하기</a></li>
 	
 			<% // 로그인을 하지 않았을때 %>
 			<c:if test="${empty MEMBER}">			
