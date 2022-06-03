@@ -8,7 +8,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheep" href="${rootPath}/static/css/home.css?ver=2022-06-03">
+<link rel="stylesheet" href="${rootPath}/static/css/home.css?ver=2022-06-03">
 <title>Insert title here</title>
 </head>
 <body>
@@ -19,16 +19,16 @@
 	<nav>
 		<ul>
 			<li>홈</li>
+			<a href="${rootPath}/book/list">
 			<li>도서정보</li>
+			</a>
 			<li>오늘의 뉴스</li>
 			<li>영화정보</li>
 			<li>로그인</li>
 			<li>회원가입</li>
 		</ul>
 	</nav>
-	<div>
-		
-	</div>
+
 </section>
 
 </body>
