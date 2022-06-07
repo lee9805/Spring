@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+namespace : Dao 인터페이스와 연결하여
+	mybatis 로 하여금 클래스르 작성하도록 하기 위한 설정 
+
+-->
+<mapper namespace="com.callor.naver.persistance.BookDao">
+
+	<select id="selectAll" resultType="BookVO">
+		SELECT * FROM tbl_NAVER
+	</select>
+	<select id="findById" resultType="BookVO">
+		SELECT * FROM tbl_NAVER 
+		WHERE isbn = #{isbn}
+	</select>
+	<!-- 이클립스, sts 대문자를 소문자 : ctrl + shift + y -->
+	<!-- 소문자를 대문자 : ctrl + shift + x -->
+	<insert id="insert" parameterType="BookVO">
+				INSERT INTO TBL_NAVER
+				(
+				isbn,
+				title,
+				author,
+				publisher,
+				price,
+				description,
+				pubdate,
+				link,
+				image
+			
+				) VALUES (
+				#{isbn},
+				#{title},
+				#{author},
+				#{publisher},
+				#{price},
+				#{description,jdbcType=VARCHAR},
+				#{pubdate,jdbcType=VARCHAR},
+				#{link,jdbcType=VARCHAR},
+				#{image,jdbcType=VARCHAR}
+				)
+	</insert>
+
+<!-- 
+	mybatis 연동한 insert, update 수행에서
+	부적절한 열유형 1111 오류가 발생하는 경우
+	
+	보통 form 에서 전체 데이터를 추가하지 않고 
+	일부만 입력된 상태로 insert 에게 전달되는 경우 발생한다
+	
+	이 문제를 발생하지 않도록 하기 위햐여
+	각 변수에 jdbcType=VARCHAR 키워드를 추가해 둔다
+	
+	이 키워드를 추가해 두면
+	데이터가 모두 준비되지 않은 상태로 insert가 성곡하게 되어
+	테스트를 완전하게 수행하지 못할수 도 있다
+	
+ -->
+	<update id="update" parameterType="BookVO">
+		UPDATE tbl_NAVER SET
+			title = #{title},
+			author = #{author},
+			publisher = #{publisher},
+			price = #{price},
+			description = #{description},
+			pubdate = #{pubdate},
+			link = #{link},
+			image = #{image}
+			
+		WHERE isbn = #{isbn}
+	</update>
+	<delete id="delete">
+		DELETE FROM tbl_NAVER WHERE isbn = #{isbn}
+	</delete>
+	<select id="creat_book_table">
+	CREATE TABLE IF NOT table tbl_naver(
+    ISBN	        VARCHAR2(13)	 primary key,
+    TITLE	        NVARCHAR2(50)	Not null,
+    AUTHOR	        NVARCHAR2(50)	Not null,
+    PUBLISHER	    NVARCHAR2(50)	Not null,
+    PRICE	        NUMBER,
+    DISCOUNT	    NUMBER,	
+    DESCRIPTION	    NVARCHAR2(2000),
+    PUBDATE	        VARCHAR2(10),
+    LINK	        VARCHAR2(125),	
+    IMAGE	        VARCHAR2(125)
+)
+	</select>
+
+</mapper>
+
+
+

@@ -19,7 +19,7 @@ import lombok.ToString;
 public class BookVO {
 
 	private String isbn;//	integer	ISBN 넘버이다.
-	private String name;//	string	검색 결과 문서의 제목을 나타낸다. 제목에서 검색어와 일치하는 부분은 태그로 감싸져 있다.
+	private String title;//	string	검색 결과 문서의 제목을 나타낸다. 제목에서 검색어와 일치하는 부분은 태그로 감싸져 있다.
 	private String author;// string	저자 정보이다.
 	private String publisher;//	string	출판사 정보이다.
 	private String price;//	integer	정가 정보이다. 절판도서 등으로 가격이 없으면 나타나지 않는다.

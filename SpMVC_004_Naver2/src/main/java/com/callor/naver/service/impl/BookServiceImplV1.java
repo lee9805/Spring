@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.callor.naver.model.BookVO;
+import com.callor.naver.persistance.BookDao;
 import com.callor.naver.service.BookService;
 
 /*
@@ -20,6 +21,12 @@ import com.callor.naver.service.BookService;
 @Service("QualifileConfig.SERVICE.BOOKS_V1")
 public class BookServiceImplV1 implements BookService{
 
+	private final BookDao dao;
+	
+	public BookServiceImplV1(BookDao dao) {
+		this.dao = dao;
+	}
+	
 	@Override
 	public List<BookVO> findByTitle(String title) {
 		// TODO Auto-generated method stub
@@ -46,8 +53,7 @@ public class BookServiceImplV1 implements BookService{
 
 	@Override
 	public List<BookVO> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.selectAll();
 	}
 
 	@Override
@@ -58,7 +64,7 @@ public class BookServiceImplV1 implements BookService{
 
 	@Override
 	public int insert(BookVO vo) {
-		// TODO Auto-generated method stub
+		dao.insert(vo);
 		return 0;
 	}
 
