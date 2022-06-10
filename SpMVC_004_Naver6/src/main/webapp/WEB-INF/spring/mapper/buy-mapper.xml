@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+namespace : Dao 인터페이스와 연결하여
+	mybatis 로 하여금 클래스르 작성하도록 하기 위한 설정 
+
+-->
+<mapper namespace="com.callor.naver.persistance.BuyBooksDao">
+
+	<select id="selectAll" resultType="BuyBooksVO">
+		SELECT * FROM tbl_BUYBOOKS
+	</select>
+	<select id="findById" resultType="BuyBooksVO">
+		SELECT * FROM tbl_BUYBOOKS 
+		WHERE b_isbn = #{b_isbn}
+	</select>
+	<select id="findByIsbnAndUserName" resultType="BuyBooksVO">
+		select * from tbl_BuyBooks
+		where b_isbn=#{b_isbn} and b_username=#{b_username}
+	</select>
+	<!-- isbn 을 기준으로 해당 도서를 구입한 사용자 리스트 -->
+	<select id="findByIsbn" resultType="BuyBooksVO">
+		select * from tbl_BuyBooks
+		where b_isbn = #{b_isbn}
+	</select>
+	<!--  사용자를 기준으로 어떤 도서들을 구입했는가 사용자별 구입도서 목록 -->
+	<select id="findByUserName" resultType="BuyBooksVO">
+		select * from tbl_BuyBooks
+		where b_username = #{b_username}
+	</select>
+	<insert id="insert" parameterType="BuyBooksVO">
+				INSERT INTO TBL_BuyBooks
+				(
+				b_isbn,
+				b_username,
+				b_date
+				) VALUES (
+				#{b_isbn},
+				#{b_username},
+				#{b_date}
+				)
+	</insert>
+	<update id="update" parameterType="BuyBooksVO">
+	</update>
+	<delete id="delete">
+<!-- 		DELETE FROM tbl_NAVER WHERE isbn = #{isbn} -->
+	</delete>
+	<select id="creat_book_table">
+	create table tbl_buybooks(
+		b_isbn varchar2(13) not null,
+		b_username varchar2(20) not null,
+		b_date VARCHAR2(10),
+		PRIMARY KEY (b_isbn, b_username),
+		CONSTRAINT FK_BOOK_USER 
+				FOREIGN KEY (b_isbn) 
+				REFERENCES tbl_naver(isbn),
+		CONSTRAINT FK_BUYER_USER
+				FOREIGN KEY (b_username) 
+				REFERENCES tbl_users(username)
+	)
+	</select>
+
+</mapper>
+
+
+
