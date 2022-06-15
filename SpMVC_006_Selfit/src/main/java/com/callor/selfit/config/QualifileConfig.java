@@ -8,6 +8,7 @@ public class QualifileConfig {
 		public static final String USER_V2 = "userServiceV2";
 		
 		public static final String SELFIT_V1= "SelfitServiceV1";
+		public static final String SELFIT_V2= "SelfitServiceV2";
 		
 	}
 	

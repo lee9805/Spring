@@ -5,6 +5,16 @@
 
 <mapper namespace="com.callor.selfit.persistance.SelfitDao">
 
+	<select id="selectWorkout" resultType="WorkoutDTO">
+		SELECT * FROM view_workout
+		WHERE sl_scid = #{sc_id}
+		ORDER BY sc_num, sc_day
+	</select>
+	<select id="seleDayHealth" resultType="WorkoutDTO">
+		SELECT * FROM view_workout
+		WHERE sl_scid = #{sl_id} AND sl_list_id = #{sc_list_id}
+	</select>
+	
 	<select id="workOutview" resultType="WorkoutDTO">
 		SELECT * FROM view_workout
 		WHERE sl_scid = #{sl_scid}
@@ -15,8 +25,15 @@
 		group by sc_num, sc_label, sc_division
 		order by sc_num
 	</select>
+	<select id="selectByScNum" resultType="StartMenuDTO">
+	SELECT sc_num,sc_label, sc_division
+		from tbl_sch
+		where SUBSTR(sc_num,1,2) = #{sc_num}
+		group by sc_num, sc_label, sc_division
+		order by sc_num
+	</select>
 	<select id="selectDaySet" resultType="StartMenuDTO">
-	SELECT sc_num, sc_label, sc_division, sc_day, sc_part
+	SELECT sc_id, sc_num, sc_label, sc_division, sc_day, sc_part
 	FROM tbl_sch
 	WHERE sc_num = #{sc_num}
 	</select>

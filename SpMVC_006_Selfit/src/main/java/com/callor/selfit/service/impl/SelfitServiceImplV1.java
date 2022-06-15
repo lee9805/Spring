@@ -5,22 +5,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.callor.selfit.config.QualifileConfig;
 import com.callor.selfit.model.StartMenuDTO;
+import com.callor.selfit.model.WorkoutDTO;
 import com.callor.selfit.persistance.SelfitDao;
 import com.callor.selfit.service.SelfitService;
 
 @Service(QualifileConfig.SERVICE.SELFIT_V1)
 public class SelfitServiceImplV1 implements SelfitService {
 
-	@Autowired
-	private SelfitDao selfitDao;
-
-	public void selfitDao(SelfitDao selfitDao) {
+	protected final SelfitDao selfitDao;
+	public SelfitServiceImplV1(SelfitDao selfitDao) {
 		this.selfitDao = selfitDao;
 	}
 
@@ -52,7 +50,18 @@ public class SelfitServiceImplV1 implements SelfitService {
 	@Override
 	public void getDaySetList(Model model, String sc_num) {
 		List<StartMenuDTO> daySetList = selfitDao.selectDaySet(sc_num);
-
 		model.addAttribute("DAYS", daySetList);
+	}
+
+	@Override
+	public void getDaySetList(Model model, String sc_num, String sc_id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public WorkoutDTO getDayHealth(String sc_id, String listid) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
