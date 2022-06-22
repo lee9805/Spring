@@ -33,11 +33,8 @@ public class MakeNaverUser {
 		String propsDir = "./src/main/webapp/WEB-INF/spring/props";
 		
 		Map<String, String[]> secFiles = new TreeMap<String, String[]>();
-		secFiles.put("naver.connection.properties", 
+		secFiles.put("naver.email.properties", 
 				new String[] {"naver.username","naver.password"});
-		System.out.println(secFiles.get("db.connection.properties")[0]);
-		System.out.println(secFiles.get("db.connection.properties")[1]);
-		
 		Set<String> files = secFiles.keySet();
 		for(String file : files) {
 			
@@ -54,6 +51,7 @@ public class MakeNaverUser {
 				}
 				out.flush();
 				out.close();
+				System.out.println("File Write OK!!");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
