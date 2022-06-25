@@ -140,6 +140,7 @@ public class MemoController {
 		MemoVO memoVO = MemoVO.builder()
 						.m_date(dayFormat.format(date))
 						.m_time(timeFormat.format(date))
+						.m_author("dlthwjd1161@naver.com")
 						.build();
 		log.debug(memoVO.toString());
 		return memoVO;
