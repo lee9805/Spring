@@ -11,27 +11,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Insert title here</title>
 <style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
 	section.main {
 		width: 70%;
 		margin: 10px auto;
+		border: 1px solid #b586fc;
+		background-color: #f6f7c8;
 	}
-	form#memoVO input,form#memoVO button {
-		width: 90%;
+	h1 {
+		height: 80px;
+		line-height: 80px;
+		background-color: #b586fc;
+		color: #fff;
+		text-align: center;
 	}
-	span {
-	color: purple;
+	form#memoVO input{
+		width: 50%;
+		margin: 10px;
+	}
+	textarea {
+		width: 100%;
+		height: 50px;
+		resize: none;
+	}
+	button {
+		margin: 10px;
+		float: right;
+		font-size: 1rem;
 	}
 </style>
 </head>
 <body>
+<section class="main">
+<h1>추가하기</h1>
 <form:form modelAttribute="memoVO" enctype="multipart/form-data">
 	<form:input path="m_seq" type="hidden"/>
-	<form:input path="m_author" placeholder="m_author"/>
+	<form:input path="m_author" placeholder="작성자"/>
 	<form:input path="m_date" type="hidden"/>
 	<form:input path="m_time" type="hidden"/>
-	<form:textarea path="m_memo" cols="100px" placeholder="m_memo"/>
+	<form:textarea path="m_memo" placeholder="내용"/>
 	<input type="file" name="up_file" />
 	<button>저장</button>
 </form:form>
+</section>
 </body>
 </html>
