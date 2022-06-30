@@ -34,7 +34,10 @@
 	section.main div {
 		text-align: center;
 		margin: 10px;
-		width:200px;
+	}
+	div img {
+		width:50%;
+	
 	}
 </style>
 </head>

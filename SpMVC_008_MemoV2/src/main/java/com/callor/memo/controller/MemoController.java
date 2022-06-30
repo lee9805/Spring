@@ -39,28 +39,28 @@ public class MemoController {
 	}
 
 	/*
-	 * 첨부파일이 있는 포로젝트에서
-	 * form 의 file input box type의 이름은 절대 VO(DTO) 클래스에
-	 * 선언된 이름을 사용하면 안된다 
+	 * 泥⑤��뙆�씪�씠 �엳�뒗 �룷濡쒖젥�듃�뿉�꽌
+	 * form �쓽 file input box type�쓽 �씠由꾩� �젅�� VO(DTO) �겢�옒�뒪�뿉
+	 * �꽑�뼵�맂 �씠由꾩쓣 �궗�슜�븯硫� �븞�맂�떎 
 	 */
 	@RequestMapping(value="/insert",method=RequestMethod.POST)
 	public String insert(@ModelAttribute("MemoDTO") MemoDTO memo, MultipartFile file,
 													HttpSession httpSession){
-		//메모를 저장하기 전에 현재 session 에 저장된 username 가져오기
+		//硫붾え瑜� ���옣�븯湲� �쟾�뿉 �쁽�옱 session �뿉 ���옣�맂 username 媛��졇�삤湲�
 		String username = (String) httpSession.getAttribute("USERNAME");
-		//저장할 메모 정보에 username 세팅
+		//���옣�븷 硫붾え �젙蹂댁뿉 username �꽭�똿
 		memo.setM_author(username);
 		
 		memoService.insertAndUpdate(memo, file);
 		
-		log.debug("메모 {}", memo.toString());
-		log.debug("파일{}", file.getOriginalFilename());
+		log.debug("硫붾え {}", memo.toString());
+		log.debug("�뙆�씪{}", file.getOriginalFilename());
 		return "redirect:/";
 	}
 	@RequestMapping(value="/{seq}/update",method=RequestMethod.GET)
 	public String update(@PathVariable("seq") String seq,Model model) {
 		
-		// 전달받은 seq 에 해당하는 데이터 select
+		// �쟾�떖諛쏆� seq �뿉 �빐�떦�븯�뒗 �뜲�씠�꽣 select
 		MemoDTO memo = memoService.findById(Long.valueOf(seq));
 		model.addAttribute("MEMO",memo);
 		return "memo/input";
@@ -69,12 +69,12 @@ public class MemoController {
 	public String update(@PathVariable("seq") String seq,
 			@PathVariable("memo")MemoDTO memoDTO,MultipartFile file,
 			HttpSession httpSession) {
-		//주소에 따라온 seq 변수값을 추출하여 memoDTO 에 setting하기
+		//二쇱냼�뿉 �뵲�씪�삩 seq 蹂��닔媛믪쓣 異붿텧�븯�뿬 memoDTO �뿉 setting�븯湲�
 		String username = (String) httpSession.getAttribute("USERNAME");
 		if(username == null) {
 			return "redirect:/user/login";
 		}
-		//로그인된 사용자의 이름을 memoDTO 에 setting하기
+		//濡쒓렇�씤�맂 �궗�슜�옄�쓽 �씠由꾩쓣 memoDTO �뿉 setting�븯湲�
 		memoDTO.setM_author(username);
 		
 		
