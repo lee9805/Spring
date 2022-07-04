@@ -108,7 +108,7 @@ public class MemoController {
 	
 		Date date = new Date(System.currentTimeMillis());
 		SimpleDateFormat toDay = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat toTime = new SimpleDateFormat("HH:mm:SS");
+		SimpleDateFormat toTime = new SimpleDateFormat("HH:mm:ss");
 		
 		MemoDTO memo =  MemoDTO.builder()
 						.m_date(toDay.format(date))
