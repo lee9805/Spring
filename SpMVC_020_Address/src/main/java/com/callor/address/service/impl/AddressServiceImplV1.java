@@ -50,13 +50,13 @@ public class AddressServiceImplV1 implements AddressService {
 
 	@Override
 	public int update(AddressVO adress) {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
 	@Override
 	public int delete(Long a_seq) {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 	@Autowired
