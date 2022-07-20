@@ -104,6 +104,16 @@ public class HomeController {
 		addrService.update(address);
 		return "redirect:/detail?seq=" + seq;
 	}
+	/*
+	 * Controller 의 method 에서 문자열을 return 하면 
+	 * tiles/layout.xml 파일에서 해당하는 문자열로 선언된 definition 을 찾는다
+	 * 있으면 layout.xml 설정된 대로 tiles 가 작동되어
+	 * layout 만들고 rendering 하여 응답을 한다
+	 * 
+	 * 만약 layout.xml 에 해당하는 definition 이 없으면
+	 * InternalResourceViewResolver가 작동되어 /views/문자열.jsp 파일을 찾아서
+	 * rendering 하여 응답한다
+	 */
 	@RequestMapping(value="/about",method=RequestMethod.GET)
 	public String about() {
 		return "about";

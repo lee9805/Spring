@@ -8,6 +8,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
 <title>주소록 찡긋</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
 	<form>
 		<input name="search" placeholder="검색어 입력 후 Enter..."/>
 	</form>
-	<table>
+	<table class="addr">
 		<thead>
 			<tr>
 				<th>SEQ</th>
@@ -30,7 +31,7 @@
 		</thead>
 		<tbody>
 			<c:forEach items="${ADDRS}" var="ADDR">
-				<tr>
+				<tr data-a_seq="${ADDR.a_seq}">
 					<td>${ADDR.a_seq}</td>
 					<td><a href="${rootPath}/detail?seq=${ADDR.a_seq}">${ADDR.a_name}</a></td>
 					<td>${ADDR.a_tel}</td>

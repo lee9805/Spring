@@ -27,7 +27,7 @@
  	</select>
  	
  	<insert id="insert" parameterType="AddressVO">
- 		INSERT INTO tbl_address(search, a_tel, a_address)
+ 		INSERT INTO tbl_address(a_name, a_tel, a_address)
 		VALUES (#{a_name}, #{a_tel}, #{a_address})
  	</insert>
  	<update id="update">
