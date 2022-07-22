@@ -35,7 +35,7 @@ public class ScoreServiceImplV1 implements ScoreService{
 	}
 
 	@Override
-	public int delete(ScoreVO scoreVO) {
+	public int delete(String id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

@@ -17,16 +17,17 @@ import com.callor.score.service.StudentService;
 public class StudentController {
 
 	@Autowired
-	private StudentService service;
+	private StudentService stService;
 	
-	
+	//JSON type 으로 return
 	@ResponseBody
 	@RequestMapping(value={"/",""},method=RequestMethod.GET)
+	//학생리스트를 return 하기 위해 return type List<StudnetVO>
 	public List<StudentVO> student(Model model) {
 		
-		List<StudentVO> student = service.selectAll();
-		model.addAttribute(student);
+		List<StudentVO> student = stService.selectAll();
 		
 		return student;
 	}
+	
 }

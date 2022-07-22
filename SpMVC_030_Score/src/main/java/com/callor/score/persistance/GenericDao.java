@@ -9,5 +9,5 @@ public interface GenericDao<VO, PK> {
 	
 	public int insert(VO vo);
 	public int update(VO vo);
-	public int delete(VO vo);
+	public int delete(PK id);
 }

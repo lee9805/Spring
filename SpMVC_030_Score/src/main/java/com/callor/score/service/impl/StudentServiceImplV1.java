@@ -39,9 +39,9 @@ public class StudentServiceImplV1 implements StudentService{
 	}
 
 	@Override
-	public int delete(StudentVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(String id) {
+		
+		return studentDao.delete(id);
 	}
 
 }
