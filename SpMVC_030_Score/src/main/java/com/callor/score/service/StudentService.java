@@ -1,8 +1,7 @@
 package com.callor.score.service;
 
-import com.callor.score.model.StudentVO;
-import com.callor.score.persistance.GenericDao;
+import com.callor.score.persistance.StudentDao;
 
-public interface StudentService extends GenericDao<StudentVO, String>{
+public interface StudentService extends StudentDao{
 
 }

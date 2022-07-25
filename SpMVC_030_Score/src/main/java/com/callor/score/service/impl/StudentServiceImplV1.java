@@ -2,9 +2,9 @@ package com.callor.score.service.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.callor.score.model.ScoreVO;
 import com.callor.score.model.StudentVO;
 import com.callor.score.persistance.StudentDao;
 import com.callor.score.service.StudentService;
@@ -12,36 +12,38 @@ import com.callor.score.service.StudentService;
 @Service
 public class StudentServiceImplV1 implements StudentService{
 
-	@Autowired
-	private StudentDao studentDao;
+	private final StudentDao stDao;
 	
+	public StudentServiceImplV1(StudentDao stDao) {
+		this.stDao = stDao;
+	}
+
 	@Override
 	public List<StudentVO> selectAll() {
-		return studentDao.selectAll();
+		// TODO Auto-generated method stub
+		return stDao.selectAll();
 	}
 
 	@Override
 	public StudentVO findById(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return stDao.findById(id);
 	}
 
 	@Override
 	public int insert(StudentVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return stDao.insert(vo);
 	}
 
 	@Override
 	public int update(StudentVO vo) {
 		// TODO Auto-generated method stub
-		return 0;
+		return stDao.update(vo);
 	}
 
 	@Override
 	public int delete(String id) {
-		
-		return studentDao.delete(id);
+		// TODO Auto-generated method stub
+		return stDao.delete(id);
 	}
-
 }
