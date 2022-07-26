@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+
+<body layout:fragment="content">
+	<h1>학생 리스트</h1>
+	<table class="student body">
+		<tr>
+			<th>학번</th>
+			<th>이름</th>
+			<th>학년</th>
+			<th>전화번호</th>
+			<th>주소</th>
+		</tr>
+		<tbody class="student body">
+			<tr  class="student list"
+				th:each="ST : ${STUDENT}"
+				th:object="${ST}"
+				th:attr="data-stnum=*{st_num}">
+				<td class="student stnum" th:text="*{st_num}"></td>
+				<td class="student stnum" th:text="*{st_name}"></td>
+				<td class="student stnum" th:text="*{st_dept}"></td>
+				<td class="student stnum" th:text="*{st_tel}"></td>
+				<td class="student stnum" th:text="*{st_addr}"></td>
+			</tr>
+</tbody>
+	</table>
+</body>
+</html>

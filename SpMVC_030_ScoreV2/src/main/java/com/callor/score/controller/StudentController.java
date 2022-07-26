@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.callor.score.model.StudentVO;
+import com.callor.score.service.ScoreService;
 import com.callor.score.service.StudentService;
 
 @Controller
@@ -19,10 +20,8 @@ public class StudentController {
 
 	@Autowired
 	private StudentService stService;
-	
-
 	  //JSON type 으로 return
-	  
+	
 	  @ResponseBody
 	  @RequestMapping(value={"JSON"},method=RequestMethod.GET) 
 	  //학생리스트를 return 하기 위해 return type List<StudnetVO> 
@@ -66,7 +65,7 @@ public class StudentController {
 	@RequestMapping(value="/update",method=RequestMethod.POST)
 	public String update(StudentVO StVO) {
 		stService.update(StVO);
-		String retStr = String.format("redirect:student/detail?st_num=%s",
+		String retStr = String.format("redirect:/student/detail?st_num=%s",
 									StVO.getSt_num());
 		return retStr;
 	}

@@ -17,7 +17,7 @@
 		margin: 5px
 	}
 </style>
-<form method="POST" enctype="multipart/form-data">
+<form method="POST">
 	<div class="student detail_body">
 		<input name="st_name" value="${STUDENT.st_name}">
 	</div>

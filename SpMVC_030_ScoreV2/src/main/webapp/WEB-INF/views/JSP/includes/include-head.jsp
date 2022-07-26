@@ -13,7 +13,7 @@
 <link rel="stylesheet" 
 		href="${rootPath}/static/css/student_list.css?2022-7-25-005">
 <link rel="stylesheet" 
-		href="${rootPath}/static/css/detail.css?2022-7-25-004">
+		href="${rootPath}/static/css/stdent_detail.css?2022-7-25-004">
 <script>
 	const rootPath = "${rootPath}"
 </script>
