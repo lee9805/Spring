@@ -11,4 +11,9 @@ public class HomeContoller {
 	public String home() {
 		return "home";
 	}
+	@RequestMapping(value="/guest", method=RequestMethod.GET)
+	public String guest() {
+		
+		return null;
+	}
 }
