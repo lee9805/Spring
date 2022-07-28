@@ -9,7 +9,7 @@
 
 <bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
 	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-	<property name="url" value="jdbc:mysql://localhost:3306/schoolDB"/>
+	<property name="url" value="jdbc:mysql://localhost:3306/schoolDB?allowMultiQueries=true"/>
 	<property name="username" value="lee9805"/>
 	<property name="password" value="!Korea8080"/>
 </bean>

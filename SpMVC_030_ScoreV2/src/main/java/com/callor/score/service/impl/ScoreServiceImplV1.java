@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.callor.score.model.ScoreUpdateVO;
 import com.callor.score.model.ScoreVO;
 import com.callor.score.persistance.ScoreDao;
 import com.callor.score.service.ScoreService;
@@ -56,14 +57,21 @@ public class ScoreServiceImplV1 implements ScoreService {
 		
 		int ret= 0;
 		for(int i=0 ; i< sb_code.length; i++) {
-			ret += SDao.updateScore(st_num, sb_code[i], sc_score[i]);
+			ret += SDao.updateScoreArray(st_num, sb_code[i], sc_score[i]);
 		}
 		
 		return ret;
 	}
 
+
 	@Override
-	public int updateScore(String st_num, String sb_code, String sc_score) {
+	public int updateScore(ScoreUpdateVO score) {
+		
+		return SDao.updateScore(score);
+	}
+
+	@Override
+	public int updateScoreArray(String st_num, String sb_code, String sc_score) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
