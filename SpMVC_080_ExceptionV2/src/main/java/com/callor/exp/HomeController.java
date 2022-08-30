@@ -1,16 +1,13 @@
 package com.callor.exp;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.callor.exp.model.UserVO;
 import com.callor.exp.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -46,6 +43,34 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String home(String username, String password) {
 		log.debug("POST Home username = {}, password = {}",username, password);
+		
+		UserVO userVO = UserVO.builder()
+							  .username(username)
+							  .password(password)
+							  .realname("hahahoho")
+							  .nickname("hahahoho")
+							  .tel("010-1111-1111")
+							  .build();
+		/*
+		 * VO(DTO) 클래스에 담긴 데이터는 어느순간 데이터자체가 null일수있다
+		 * UserVO userVO = userService.findById("callor") 코드에서
+		 * Table 에 callor라는 id가 없으면 userVO 에 담기는
+		 * 데이터는 null이 된다
+		 * 
+		 * null.toString()이라는 메서드를 실행하는 명령이 수행될텐데
+		 * null 데이터에는 어떠한 method도 존재하지 않는다
+		 * 이때 NullPointerException 이 발생한다 
+		 */
+		
+		if(userVO != null) {
+			log.debug("Insert 하기 위한 데이터", userVO.toString());			
+		}
+		// logback 에서 String Template("{}") 을 사용하면
+		// logback 자체에서 null 값을 검증하여 표현하기 때문에
+		// null pinter Exception 이 발생하지 않는다
+		log.debug("Insert 하기 위한 데이터 {}", userVO);
+		userService.insert(userVO);
+		
 		return "home";
 	}
 	
