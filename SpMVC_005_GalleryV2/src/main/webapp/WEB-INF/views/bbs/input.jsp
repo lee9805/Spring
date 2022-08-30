@@ -32,15 +32,5 @@
 	<form:input path="up_file" type="file" />
 	<button>저장</button>
 </form:form>
-<%/* 
-	file imput box 에 선택하는 파일 제한하기
-	accept=".hwp" : 확장자가 hwp인 파일만 선택할수 있게
-	accept=".jpg", accept=".png", accept="gif" : 이미지 파일등중에서
-		jpg, png, gif 확장자를 갖는 파일만
-	accept="image/*" :모든 이미지 파일
-	accept="video/*" :모든 비디오 파일
-	accept="audio/*" :모든 음성(음악)파일
-	accept="image/*,video/*, audio/*" :이미지, 동영상, 음성파일
-*/%>
 </body>
 </html>

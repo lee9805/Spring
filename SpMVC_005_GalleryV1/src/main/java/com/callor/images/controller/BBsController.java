@@ -42,7 +42,7 @@ public class BBsController {
 		
 		log.debug("=".repeat(100));
 		log.debug("INSERT 전 {}", bbsVO.getB_seq());
-		bbsDao.insert(bbsVO);+
+		bbsDao.insert(bbsVO);
 		log.debug("INSERT 후 {}", bbsVO.getB_seq());
 		
 		return "redirect:/";

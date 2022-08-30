@@ -15,8 +15,8 @@
 		class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName"
 			value="com.mysql.cj.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql:localhost:3306/mydb" />
-		<property name="username" value="lee98" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb" />
+		<property name="username" value="root" />
 		<property name="password" value="!Korea8080" />
 	</bean>
 	<!-- datasource -->
@@ -32,7 +32,7 @@
 	<!-- sqlSessionFactory -->
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="oracleDS" />
+		<property name="dataSource" ref="mysqlDS" />
 		<property name="typeAliasesPackage"
 			value="com.callor.images.model" />
 		<property name="mapperLocations"

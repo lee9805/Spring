@@ -14,10 +14,12 @@
 </head>
 <body>
 <h1>ADMIN HOME</h1>
-<h3><sec:authentication property="principal.username"/> </h3>
-<h3><sec:authentication property="principal.email"/> </h3>
-<h3><sec:authentication property="principal.realname"/> </h3>
-<h3><sec:authentication property="principal.nickname"/> </h3>
+	<sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
+		<h3><sec:authentication property="principal.username"/> </h3>
+		<h3><sec:authentication property="principal.email"/> </h3>
+		<h3><sec:authentication property="principal.realname"/> </h3>
+		<h3><sec:authentication property="principal.nickname"/> </h3>
+	</sec:authorize>
 	<h3>
 		<form:form action="${rootPath}/logout">
 			<button>로그아웃</button>

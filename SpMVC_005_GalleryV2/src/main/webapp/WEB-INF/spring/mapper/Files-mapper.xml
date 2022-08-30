@@ -5,23 +5,26 @@
   
  <mapper namespace="com.callor.images.persistance.FileDao">
  
+ 
  	<select id="selectAll" resultType="FilesVO">
- 	select * from tbl_images
+ 		SELECT * FROM tbl_images
  	</select>
+ 
  	<insert id="insertFiles" parameterType="FilesVO">
- 		<insert id="insertFiles" parameterType="FilesVO">
- 	INSERT INTO tbl_images (
- 	i_seq,
- 	i_bseq,
- 	i_originalName,
- 	i_imageName
- 	)
- 	SELECT seq_image.NEXTVAL, SUB. * FROM(
+ 		INSERT INTO tbl_images(
+ 			i_seq, 
+ 			i_bseq, 
+ 			i_originalName, 
+ 			i_imageName
+ 		)
+ 		SELECT seq_image.NEXTVAL, SUB.* FROM (
  		<foreach collection="list" separator="UNION ALL" item="vo">
- 			SELECT #{vo.i_bseq}, #{vo.i_originalName}, #{vo.i_imageName}
- 			FROM DUAL
+ 				SELECT	#{vo.i_bseq}, 
+ 						#{vo.i_originalName}, 
+	 					#{vo.i_imageName}
+ 				FROM DUAL
  		</foreach>
- 		)SUB
+ 		) SUB
  	</insert>
  
  	<insert id="insert" parameterType="FilesVO">
@@ -39,19 +42,12 @@
  	</select>
 
  	<select id="create_images_table">
-	 	CREATE TABLE tbl_images (
-	 			i_seq NUMBER PRIMARY KEY,
-		        i_bseq NUMBER  NOT NULL,
-		        i_originalName VARCHAR2(255) NOT NULL,	
-		        i_imageName VARCHAR2(255)	NOT NULL	
+	 	CREATE TABLE IF NOT EXISTS  tbl_images (
+	 			i_seq BIGINT PRIMARY KEY,
+		        i_bseq int  NOT NULL,
+		        i_originalName VARCHAR(255) NOT NULL,	
+		        i_imageName VARCHAR(255)	NOT NULL	
 		)
  	</select>
- 		<select id="create_images_seq">
-		create SEQUENCE seq_image
-		INCREMENT BY 1 START WITH 1
-	</select>
- 
- 
- 
- 
+
  </mapper> 

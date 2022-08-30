@@ -3,8 +3,9 @@ package com.callor.todo.controller;
 import java.security.Principal;
 
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -19,26 +20,25 @@ public class UserController {
 
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String login() {
-		return "redirect:/login";
+		return null;
 	}
 	@RequestMapping(value="/join",method=RequestMethod.GET)
 	public String join() {
-		return "user/join";
+		return null;
 	}
 	@RequestMapping(value="/join",method=RequestMethod.POST)
-	public String join(UserVO userVO) {
+	public String join(@ModelAttribute UserVO userVO) {
 		
 		log.debug(userVO.toString());
 		log.debug("회원가입 : {}",userVO);
 		log.debug("회원가입 : " + userVO.toString());
-		return "redirect:/";
+		return "redirect:/login";
 	}
 	@PreAuthorize("hasAnyRole(['ROLE_USER','ROLE_ADMIN'])")
 	@RequestMapping(value="/mypage", method=RequestMethod.GET)
-	public String mypage(UserVO userVO, Principal principal, Model model) {
+	public String mypage(@AuthenticationPrincipal UserVO userVO, Principal principal) {
 		String username = principal.getName();
-		model.addAttribute("USER",username);
-		return "user/mypage";
+		return null;
 	}
 }
   

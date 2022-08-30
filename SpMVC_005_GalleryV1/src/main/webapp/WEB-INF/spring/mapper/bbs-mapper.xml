@@ -32,19 +32,14 @@
 	</insert>
 
 	<select id="create_bbs_table">
-		CREATE TABLE tbl_bbs(
-		b_seq 		NUMBER 			PRIMARY KEY,
-		b_date 		VARCHAR2(10) 	NOT NULL,
-		b_time 		VARCHAR2(10) 	NOT NULL,
-		b_writer 	VARCHAR2(125) 	NOT NULL,
-		b_subject 	nVARCHAR2(125) 	NOT NULL,
-		b_content 	nVARCHAR2(1000) NOT NULL
-
-		)
-	</select>
-	<select id="create_bbs_seq">
-		create SEQUENCE seq_bbs
-		INCREMENT BY 1 START WITH 1
+        CREATE TABLE tbl_bbs(
+			b_seq 		bigint 			PRIMARY KEY,
+			b_date 		VARCHAR(10) 	NOT NULL,
+			b_time 		VARCHAR(10) 	NOT NULL,
+			b_writer 	VARCHAR(125) 	NOT NULL,
+			b_subject 	VARCHAR(125) 	NOT NULL,
+			b_content 	VARCHAR(1000) NOT NULL
+		);
 	</select>
 
 </mapper>

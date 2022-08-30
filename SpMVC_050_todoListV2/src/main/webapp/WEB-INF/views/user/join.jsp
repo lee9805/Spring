@@ -14,13 +14,13 @@
 <body>
 	<h1>JOIN</h1>
 	<form:form>
-		<div><input type="username" placeholder="username"></div>
-		<div><input type="password" placeholder="password"></div>
-		<div><input type="re_password" placeholder="re_password"></div>
-		<div><input type="email" placeholder="email"></div>
-		<div><input type="realname" placeholder="realname"></div>
-		<div><input type="nickname" placeholder="nickname"></div>
-		<div><button>저장</button></div>
+		<div><input name="username" placeholder="username"></div>
+		<div><input type="password" name="password" placeholder="password"></div>
+		<div><input type="password" name="re_password"placeholder="re_password"></div>
+		<div><input name="email" placeholder="email"></div>
+		<div><input name="realname" placeholder="realname"></div>
+		<div><input name="nickname" placeholder="nickname"></div>
+		<button>저장</button>
 	</form:form>
 </body>
 </html>
