@@ -9,17 +9,14 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Builder
 public class UserVO {
-
 	private String username;
 	private String password;
-	
 	private String realname;
 	private String nickname;
 	private String tel;
-	
 }
